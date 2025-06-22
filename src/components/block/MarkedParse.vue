@@ -4,8 +4,7 @@ import { marked } from 'marked'
 
 const props = defineProps<{
   token: Token
-  index: number
-  total: number
+  index?: number
 }>()
 
 // 最后两行

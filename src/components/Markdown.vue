@@ -88,11 +88,11 @@ const html = computed(() => parseMarkdown(md.value))
   <!-- <div v-html="html" /> -->
   <div class="grid grid-cols-2 gap-4">
     <div>
-      <!-- <BlockRender :tokens="tokens" /> -->
+      <BlockRender :tokens="tokens" />
 
       <!-- <BlockRenderNew :tokens="tokens" /> -->
     </div>
-    <RemarkMarkdown :content="md" />
+    <!-- <RemarkMarkdown :content="md" /> -->
   </div>
 </template>
 
