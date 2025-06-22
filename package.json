@@ -15,6 +15,12 @@
   "dependencies": {
     "@vueuse/core": "catalog:frontend",
     "marked": "catalog:default",
+    "rehype-raw": "catalog:dev",
+    "rehype-stringify": "catalog:dev",
+    "remark-gfm": "catalog:dev",
+    "remark-parse": "catalog:dev",
+    "remark-rehype": "catalog:dev",
+    "unified": "catalog:dev",
     "vue": "catalog:frontend",
     "vue-router": "catalog:frontend"
   },

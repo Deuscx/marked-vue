@@ -22,9 +22,15 @@ catalogs:
     eslint: ^9.28.0
     eslint-plugin-format: ^1.0.1
     lint-staged: ^16.1.0
+    rehype-raw: ^7.0.0
+    rehype-stringify: ^10.0.1
+    remark-gfm: ^4.0.1
+    remark-parse: ^11.0.0
+    remark-rehype: ^11.1.2
     simple-git-hooks: ^2.13.0
     taze: ^19.1.0
     typescript: ^5.8.3
+    unified: ^11.0.5
     vitest: ^3.2.3
     vue-tsc: ^2.2.10
   frontend:

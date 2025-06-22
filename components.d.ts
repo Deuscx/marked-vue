@@ -8,9 +8,23 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BlockRender: typeof import('./src/components/block/BlockRender.vue')['default']
+    EmBlock: typeof import('./src/components/block/EmBlock.vue')['default']
+    EmRender: typeof import('./src/components/block/EmRender.vue')['default']
+    EMRender: typeof import('./src/components/block/EMRender.vue')['default']
+    HeaderBlock: typeof import('./src/components/block/HeaderBlock.vue')['default']
+    LinkBlock: typeof import('./src/components/block/LinkBlock.vue')['default']
+    ListBlock: typeof import('./src/components/block/ListBlock.vue')['default']
+    ListItemBlock: typeof import('./src/components/block/ListItemBlock.vue')['default']
     Markdown: typeof import('./src/components/Markdown.vue')['default']
+    MarkedParse: typeof import('./src/components/block/MarkedParse.vue')['default']
+    ParagraphBlock: typeof import('./src/components/block/ParagraphBlock.vue')['default']
+    RemarkMarkdown: typeof import('./src/components/RemarkMarkdown.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    StrongBlock: typeof import('./src/components/block/StrongBlock.vue')['default']
+    TableBlock: typeof import('./src/components/block/TableBlock.vue')['default']
+    TextBlock: typeof import('./src/components/block/TextBlock.vue')['default']
     TheCounter: typeof import('./src/components/TheCounter.vue')['default']
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
     TheInput: typeof import('./src/components/TheInput.vue')['default']
