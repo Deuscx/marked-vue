@@ -1,4 +1,6 @@
 packages: []
+catalog:
+  marked: ^15.0.12
 catalogs:
   build:
     '@iconify-json/carbon': ^1.2.9

@@ -30,6 +30,10 @@ catalogs:
     unplugin-vue-router:
       specifier: ^0.12.0
       version: 0.12.0
+  default:
+    marked:
+      specifier: ^15.0.12
+      version: 15.0.12
   dev:
     '@antfu/eslint-config':
       specifier: ^4.14.1
@@ -92,6 +96,9 @@ importers:
       '@vueuse/core':
         specifier: catalog:frontend
         version: 13.3.0(vue@3.5.16(typescript@5.8.3))
+      marked:
+        specifier: catalog:default
+        version: 15.0.12
       vue:
         specifier: catalog:frontend
         version: 3.5.16(typescript@5.8.3)
@@ -2259,6 +2266,11 @@ packages:
 
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
+
+  marked@15.0.12:
+    resolution: {integrity: sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==}
+    engines: {node: '>= 18'}
+    hasBin: true
 
   mdast-util-find-and-replace@3.0.1:
     resolution: {integrity: sha512-SG21kZHGC3XRTSUhtofZkBzZTJNM5ecCi0SK2IMKmSXR8vO3peL+kb1O0z7Zl83jKtutG4k5Wv/W7V3/YHvzPA==}
@@ -5401,6 +5413,8 @@ snapshots:
   make-synchronized@0.2.9: {}
 
   markdown-table@3.0.4: {}
+
+  marked@15.0.12: {}
 
   mdast-util-find-and-replace@3.0.1:
     dependencies:
