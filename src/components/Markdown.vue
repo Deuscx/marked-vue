@@ -1,7 +1,7 @@
 <!-- eslint-disable unused-imports/no-unused-vars -->
 <!-- eslint-disable no-console -->
 <script setup lang="ts">
-import type { RendererObject } from 'marked'
+import type { RendererObject, Token } from 'marked'
 import { marked } from 'marked'
 // import BlockRenderNew from './block/BlockRenderNew.ts'
 import { content } from './data'
@@ -63,13 +63,31 @@ const customRenderer: RendererObject = {
       }</table></div>`
   },
 }
+
+function walkTokens(token: Token) {
+  // TODO: 需要优化
+  const subs = token.tokens || token.items
+  if (subs) {
+    const start = (token._start || 0)
+    let subpos = 0
+    subs.forEach((sub) => {
+      const substart = token.raw.indexOf(sub.raw, subpos)
+      const sublen = sub.raw.length
+      sub._start = substart + start
+      sub._end = sub._start + sublen
+      subpos = substart + sublen
+    })
+  }
+}
 // 将自定义渲染器注册到marked
 marked.use({ renderer: customRenderer })
+// marked.use({ walkTokens })
 function parseMarkdown(content: string) {
   console.time('marked')
   const tokens = marked.lexer(content)
-  console.log(tokens)
+  marked.walkTokens(tokens, walkTokens)
   const html = marked.parser(tokens)
+  // const html = marked.parse(content)
   console.timeEnd('marked')
   return html
 }
@@ -80,15 +98,15 @@ function getTokens(content: string) {
   return tokens
 }
 
-const tokens = computed(() => getTokens(md.value))
-const html = computed(() => parseMarkdown(md.value))
+const tokens = computed(() => getTokens(content))
+const html = computed(() => parseMarkdown(content))
 </script>
 
 <template>
-  <!-- <div v-html="html" /> -->
+  <div v-html="html" />
   <div class="grid grid-cols-2 gap-4">
     <div>
-      <BlockRender :tokens="tokens" />
+      <!-- <BlockRender :tokens="tokens" /> -->
 
       <!-- <BlockRenderNew :tokens="tokens" /> -->
     </div>
